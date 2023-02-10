@@ -1,0 +1,58 @@
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
+#include <time.h>
+using namespace std;
+int main() {
+     srand(time(0));
+     const char* stone_paper[3]= { "Stone", "Paper", "Scissor"};
+     int score1=0;
+     int score2=0;
+     int i=1;
+     char user[10];
+     while(i==1){
+     int RanIndex = rand() % 3;
+     cout<<"\nEnter the Choice: ";
+     cin>>user;
+     cout<<"\n"<<stone_paper[RanIndex];
+     if(strcmp("Stone",user)==0 && strcmp("Paper",stone_paper[RanIndex])==0)
+     {   
+         score2+=1;
+     }
+     if(strcmp("Stone",user)==0 && strcmp("Scissor",stone_paper[RanIndex])==0)
+     {   //cout<<stone_paper[RanIndex];
+         score1+=1;
+     }
+     if(strcmp("Paper",user)==0 && strcmp("Scissor",stone_paper[RanIndex])==0)
+     {   //cout<<stone_paper[RanIndex];
+         score2+=1;
+     }
+     if(strcmp("Paper",user)==0 && strcmp("Stone",stone_paper[RanIndex])==0)
+     {   //cout<<stone_paper[RanIndex];
+         score2+=1;
+     }
+     if(strcmp("Scissor",user)==0 && strcmp("Stone",stone_paper[RanIndex])==0)
+     {   //cout<<stone_paper[RanIndex];
+         score2+=1;
+     }
+       if(strcmp("Scissor",user)==0 && strcmp("Paper",stone_paper[RanIndex])==0)
+     {   //cout<<stone_paper[RanIndex];
+         score1+=1;
+     }
+     cout<<"\npress 1 to continue else press 0";
+     cin>>i;
+     if(i==0){
+         break;
+     }
+     }
+     if(score1>score2){
+         cout<<"\nUser won";
+     }
+     else if(score2>score1){
+         cout<<"Machine won";
+     }
+    else{
+         cout<<"Draw";
+     }
+    return 0;
+}
